@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const crypto = require ('crypto')
-const uuidv1 = require ('uuid/v1')
+// const uuidv1 = require ('uuid/v1')
+const { v1: uuidv1 } = require('uuid');
+uuidv1();
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,7 +18,7 @@ const userSchema = new mongoose.Schema({
         unique: 32
 
     },
-   hashed_passowrd: {
+   hashed_password: {
         type: String,
         required: true,
     
@@ -53,6 +55,9 @@ userSchema
 })
 
 userSchema.methods = {
+    authenticate: function (plainText) {
+       return this.encryptPassword(plainText) === this.hashed_password; 
+    },
     encryptPassword: function(password) {
         if (!password) return '';
         try {
