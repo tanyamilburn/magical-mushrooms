@@ -18,8 +18,7 @@ const Menu = ({ history }) => (
                 <Link
                     className="nav-link"
                     style={isActive(history, "/")}
-                    to="/"
-                >
+                    to="/">
                     Home
                 </Link>
             </li>
@@ -28,8 +27,7 @@ const Menu = ({ history }) => (
                 <Link
                     className="nav-link"
                     style={isActive(history, "/shop")}
-                    to="/shop"
-                >
+                    to="/shop">
                     Shop
                 </Link>
             </li>
@@ -38,8 +36,7 @@ const Menu = ({ history }) => (
                 <Link
                     className="nav-link"
                     style={isActive(history, "/cart")}
-                    to="/cart"
-                >
+                    to="/cart">
                     Cart{" "}
                     <sup>
                         <small className="cart-badge">{itemTotal()}</small>
@@ -52,8 +49,7 @@ const Menu = ({ history }) => (
                     <Link
                         className="nav-link"
                         style={isActive(history, "/user/dashboard")}
-                        to="/user/dashboard"
-                    >
+                        to="/user/dashboard">
                         Dashboard
                     </Link>
                 </li>
@@ -105,7 +101,7 @@ const Menu = ({ history }) => (
                                 history.push("/");
                             })
                         }
-                    >
+>
                         Signout
                     </span>
                 </li>
